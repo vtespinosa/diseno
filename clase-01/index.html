@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios, segunda versión remota" />
+        <title>DNO037vR2 &#129312;</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Vicente Espinosa</h1>
+        </header>
+
+        <main>
+            <p>Soy estudiante de quinto ingeniería y tomé este OFG para complementar mis conocimientos de desarrollo web con la parte más estética. Espero poder ver eso en el futuro, porque ya se ocupar HTML, CSS y Javascript bien.</p>
+        </main>
+
+        <footer>
+            <div></div>
+            <div></div>
+            <div id="next"></div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+        <script>
+            // Esto es una línea de comentario en JAVASCRIPT
+            var palabras = ["siguiente", "repüyen", "seguente", "suivant", "next", "Nächster", "次の", "다음의"];
+            var n = palabras.length;
+            function setup() {
+                var r = floor(random(0, n));
+                console.log(r);
+                createA("page.html", palabras[r]).parent("next");
+                noCanvas();
+            }
+            /* 
+            Esto también es un comentario en JAVASCRIPT
+            Se usa así para varias líneas de comentario
+            */
+        </script>
+    </body>
+</html>
