@@ -12,10 +12,11 @@
             <div>
                 <h1>&#128397; <span>DibujApp</span></h1>
             </div>
-            <div></div>
+            <div class="menu-color"></div>
             <div></div>
         </header>
         <main></main>
+        <footer></footer>
         <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
         <script>
             var main = document.querySelector("main");
@@ -23,13 +24,21 @@
             var menuColor = document.getElementsByTagName("div")[1];
             var menuGrosor = document.getElementsByTagName("div")[2];
             var menuDescargar = document.getElementsByTagName("div")[3];
-            var colorido, grosor, descarga;
+            var colorido, eraser, grosor, descarga, bgColor;
+            let mode = 1;
+
+            function setMode(value) {
+              mode = value;
+            }
 
             function setup() {
                 const canvas = createCanvas(windowWidth, windowHeight).parent(main);
-                console.log(canvas);
-                background(235);
-                colorido = createColorPicker("#13505B").parent(menuColor);
+                bgColor = 235
+                background(bgColor);
+                colorido = createColorPicker("#13505B").parent(menuColor).id("color-picker");
+                document.getElementById("color-picker").onclick = () => setMode(1);
+                eraser = createButton("Goma").parent(menuColor).id("eraser");
+                document.getElementById("eraser").onclick = () => setMode(0);
                 createSpan("Grosor ").parent(menuGrosor);
                 grosor = createSelect().parent(menuGrosor);
                 grosor.option("Thin", 1);
@@ -44,19 +53,27 @@
                 grosor.selected(4);
                 descarga = createButton("Descargar").parent(main);
                 descarga.mousePressed(() => saveCanvas(canvas, 'MyAmazingDrawing', 'jpg'));
+
+                createA("index.html", "Dibujo").parent(footer);
+                createA("gallery.html", "Galería").parent(footer);
                 instructivo();
             }
 
             function draw() {
-                stroke(colorido.color());
-                strokeWeight(grosor.value());
                 if (mouseIsPressed) {
-                    line(pmouseX, pmouseY, mouseX, mouseY);
+                  if (mode === 1) {
+                    stroke(colorido.color());
+                    strokeWeight(grosor.value());
+                  } else {
+                    stroke(bgColor);
+                    strokeWeight(8);
+                  }
+                  line(pmouseX, pmouseY, mouseX, mouseY);
                 }
             }
             
             function instructivo(){
-                alert("Bienvenidos a DibujApp, done lo único que tienes que hacer es elegir un color, seleccionar un grosor y plasmar tu imaginación el cualquier parte de la página.")
+                alert("Bienvenidos a DibujApp, done lo único que tienes que hacer es elegir un color, seleccionar un grosor y plasmar tu imaginación en cualquier parte de la página. Si quieres agregar tu dibujo a la galería, envialo a vtespinosa@uc.cl")
             }
         </script>
     </body>

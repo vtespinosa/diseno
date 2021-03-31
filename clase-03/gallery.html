@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios, segunda versión remota">
+        <title>&#128397; DNO037 | Evalución Nº1</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+          <h1 class="gallery-title">Galería</h1>
+
+          <div class="drawings-container">
+            <div class="drawing-card">
+              <img src="./images/Faure.jpg" alt="Draw">
+              <div class="description">
+                El sueño de todo futbolista, meter un gol de chilena.
+              </div>
+            </div>
+
+            <div class="drawing-card">
+              <img src="./images/Pepe.jpeg" alt="Draw">
+              <div class="description">
+                Dos personas disfrutando de la puesta de sol en la playa
+              </div>
+            </div>
+
+            <div class="drawing-card">
+              <img src="./images/Phillip.jpeg" alt="Draw">
+              <div class="description">
+                Imágen filtrada del fisicoculturista Arnold Schwarzenegger
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer></footer>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+        <script>
+          var footer = document.querySelector("footer");
+            
+          function setup() {
+              createA("index.html", "Dibujo").parent(footer);
+              createA("gallery.html", "Galería").parent(footer);
+          }
+        </script>
+    </body>
+</html>

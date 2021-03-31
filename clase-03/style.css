@@ -18,6 +18,7 @@
     font-family: "Lexend Deca", sans-serif;
     font-weight: 400;
     transition: all ease 0.25s;
+    box-sizing: border-box;
 }
 
 body {
@@ -114,4 +115,70 @@ main button:hover {
 main {
     height: 100vh;
     width: 100vw;
+}
+
+.menu-color {
+  display: flex;
+  align-items: center;
+}
+
+#eraser {
+  margin-left: 15px;
+  padding: 5px;
+}
+
+.gallery-title {
+    margin: 40px auto;
+    text-align: center;
+}
+.drawings-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.drawings-container .drawing-card {
+    width: 450px;
+    margin: 5px 10px;
+    border-radius: 15px;
+    background-color: #DADADA;
+}
+.drawings-container .drawing-card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+.drawings-container .drawing-card .description {
+    padding: 30px 40px;
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 70px;
+    left: 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+footer a {
+    background:#eee;
+    border:1px solid #ddd;
+    box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.25);
+    margin-left: 15px;
+    padding: 5px 15px;
+    transition: all 200ms linear;
+}
+
+@media (max-width: 600px) {
+    footer {
+        left: 5px;
+        bottom: 20px;
+    }
+}
+
+footer a:hover {
+    background-color: #DADADA;
 }
