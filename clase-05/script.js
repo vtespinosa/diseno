@@ -3,7 +3,7 @@
 Fuente: https://datos.gob.cl/dataset/indice-de-intesidad-de-uso-del-cobre-por-pais/resource/6b2ce9f5-f23a-41ef-961a-1e9939e00c10
 Preferí "limpiar" los datos antes de utilizarlos. La versión "limpia" la dejé en GitHub
 */
-Papa.parse("https://raw.githubusercontent.com/profesorfaco/dno037-2021/main/clase-05/indice-uso-cobre.csv", {
+Papa.parse("https://raw.githubusercontent.com/vtespinosa/diseno/master/clase-05/indice-uso-cobre.csv", {
     download: true,
     header: true,
     dynamicTyping: true,
@@ -38,14 +38,20 @@ Papa.parse("https://raw.githubusercontent.com/profesorfaco/dno037-2021/main/clas
                 indice.push(datos[f].catorce);
                 indice.push(datos[f].quince);
                 indice.push(datos[f].dieciseis);
-                new Chart(document.querySelector("#grafico").getContext("2d"), {
+
+                const ctx = document.querySelector("#grafico").getContext("2d");
+                const gradientStroke = ctx.createLinearGradient(0, 0, 0, 400);
+                gradientStroke.addColorStop(0, "#8E70D380");
+                gradientStroke.addColorStop(1, "#8E70D300");
+
+                new Chart(ctx, {
                     type: "line",
                     data: {
                         labels: [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
                         datasets: [
                             {
                                 data: indice,
-                                backgroundColor: "#675BC233",
+                                backgroundColor: gradientStroke,
                                 borderColor: "#8E70D380",
                                 pointRadius: 2,
                                 borderWidth: 1,
