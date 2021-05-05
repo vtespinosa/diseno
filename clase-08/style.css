@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('http://fonts.cdnfonts.com/css/harry-potter');
 
 :root{
     --fondo: #000;
@@ -17,8 +18,8 @@ body {
 }
 
 body.portada{
-    background:var(--fondo) url('images/portada-2.jpg') right bottom no-repeat;
-    background-size:auto 75%;
+    background:var(--fondo) url('images/portada.png') right bottom no-repeat;
+    background-size:auto 100%;
 }
 
 a {
@@ -78,6 +79,12 @@ header div h1{
     font-size:calc(1.5rem + 1vw);
     line-height: 1;
     text-shadow: 0 0 2px var(--fondo);
+}
+
+header div h1.main-header {
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 4rem;
+    color: rgb(219, 219, 219);
 }
 
 header div p{
