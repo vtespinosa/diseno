@@ -1,5 +1,40 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
 
 header{
-	background:#A2A2A2;
+	background: rgb(56,124,218);
+	background: linear-gradient(90deg, rgba(56,124,218,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+header .container .row .me-auto {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+header .container .row h1 {
+	font-size: 3rem;
+}
+
+header .container .row p {
+	font-size: 1.2rem;
+}
+
+header .container .row .lead {
+	font-size: 1.5rem;
+	margin: 15px 0;
+}
+
+header .container .img-fluid {
+	width: 60%;
+}
+
+.modal .modal-body .modal-img {
+	width: 80%;
+	display: block;
+	margin: 10px auto;
 }
