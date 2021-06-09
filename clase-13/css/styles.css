@@ -11060,7 +11060,7 @@ footer.footer .social-link:hover {
   z-index: 1;
 }
 .portfolio-item .caption .caption-content {
-  color: #fff;
+  color: #000;
   margin: auto 2rem 2rem;
 }
 .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
@@ -11068,8 +11068,8 @@ footer.footer .social-link:hover {
   text-transform: uppercase;
 }
 .portfolio-item .caption .caption-content p {
-  font-weight: 300;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1.3rem;
 }
 @media (min-width: 992px) {
   .portfolio-item {
@@ -11108,6 +11108,9 @@ footer.footer .social-link:hover {
 }
 
 .service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #fff;
   color: #1D809F;
   height: 7rem;
@@ -11116,4 +11119,9 @@ footer.footer .social-link:hover {
   line-height: 7.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.service-icon svg {
+  width: 40%;
+  top: 10px;
 }
